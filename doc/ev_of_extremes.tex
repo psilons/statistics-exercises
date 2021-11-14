@@ -1,0 +1,71 @@
+% Preamble
+\documentclass[11pt]{simple_doc}
+
+% Packages
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{simple_note}
+\usepackage{enumitem}
+\usepackage{tkz-euclide}
+
+\hypersetup{
+    colorlinks=true,
+    linkcolor=cyan,
+    filecolor=blue,
+    urlcolor=magenta,
+}
+
+% Document
+\begin{document}
+    \exerheader{Statistics}{EV of Extremes}{\today}{ctbBlueDark}
+
+    \begin{cbstripe}{Problem}{ctbGreenDark}{ctbGreenLight}
+        \textit{Given two random variables $X$ and $Y$ over uniform distribution $U(0, 1)$. Find
+        the PDF of $Z = \min(X, Y)$.}
+    \end{cbstripe}
+
+    This \href{https://danieltakeshi.github.io/2016/09/25/the-expectation-of-the-minimum-of-iid-uniform-random-variables/}{post}
+    (for $U(0, 1)$),
+    this \href{https://math.stackexchange.com/questions/786392/expectation-of-minimum-of-n-i-i-d-uniform-random-variables}{post}
+    (for $U(a, b)$),
+    this \href{https://stats.stackexchange.com/questions/220/how-is-the-minimum-of-a-set-of-iid-random-variables-distributed}{post}
+    (with extended references)
+    and this \href{https://math.stackexchange.com/questions/308230/expectation-of-the-min-of-two-independent-random-variables}{post}
+    give the solution for n-variable case:
+    \begin{equation}
+    F_Z(z) = P(\min_i X_i \leqslant z) = 1 - (1 - P(X_i \leqslant z))^n
+    \end{equation}
+    for any $i$.
+
+    Since $X_i$ has uniform distribution, $P(X_i \leqslant z) = z$ and
+    \begin{equation}
+        F_Z(z) = 1 - (1 - z)^n \ and \ f_Z(z) = n(1 - z)^{n-1}
+    \end{equation}
+
+    The expected value is
+    \begin{equation}
+    \mathbb{E}(Z) = \int_0^1 tf_Z(t)dt = n \int_0^1 t(1-t)^{n-1} = \frac{1}{n+1}
+    \end{equation}
+
+    Similarly, see \href{https://math.stackexchange.com/questions/197299/expected-value-of-maximum-of-two-random-variables-from-uniform-distribution}{this post},
+    if $\displaystyle  W = \max_i X_i$, then
+    \begin{equation}
+        F_W(w) = w^n \ and \ f_W(w) = nw^{n-1}
+    \end{equation}
+
+    The expected value is
+    \begin{equation}
+    \mathbb{E}(W) = \int_0^1 tf_W(t)dt = n \int_0^1 tt^{n-1} dt = n \int_0^1 t^{n}dt = \frac{n}{n+1}
+    \end{equation}
+
+    This \href{https://math.stackexchange.com/questions/1242784/the-maximum-and-minimum-of-five-independent-uniform-random-variables}{post}
+    discusses the expectation of $max - min$.
+
+    This \href{https://www.quora.com/What-is-the-distribution-of-the-maximum-or-minimum-of-two-independent-random-variables-with-an-arbitrary-distribution}{post}
+    initiates a thought on spectrum of n.
+
+    This \href{https://math.stackexchange.com/questions/1668099/what-is-the-expected-value-of-the-sum-of-the-k-out-of-a-set-of-n-smallest}{post}
+    discusses sums of k smallest (out of n variables).
+
+
+\end{document}

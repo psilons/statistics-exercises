@@ -1,0 +1,104 @@
+% Preamble
+\documentclass[12pt]{simple_doc}
+
+% Packages
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{simple_note}
+\usepackage{enumitem}
+\usepackage{tkz-euclide}
+
+\hypersetup{
+    colorlinks=true,
+    linkcolor=cyan,
+    filecolor=blue,
+    urlcolor=magenta,
+}
+
+% Document
+\begin{document}
+    \exerheader{Statistics}{PDF of RV Summation}{\today}{ctbBlueDark}
+
+    \begin{cbstripe}{Problem}{ctbGreenDark}{ctbGreenLight}
+        \textit{Given two random variables $X$ and $Y$ over uniform distribution $U(0, 1)$. Find
+        the PDF of $Z = X + Y$.}
+    \end{cbstripe}
+
+    Since $X, Y \sim U(0, 1)$, the PDFs of $X$ and $Y$ are $f_X(x) = 1$ for $0 < x < 1$ and
+    $f_Y(y) = 1$ for $0 < y < 1$. (Properties of uniform distribution is listed in
+    \href{https://en.wikipedia.org/wiki/Continuous_uniform_distribution}{wikipedia})
+
+    Then
+    \begin{equation} \label{eq:1}
+		\begin{aligned}
+		f_Z(z) &= P(Z = z) = P(X + Y = z) = \sum_x P(X = x, Y = z - x) \\
+		   &= \int_{-\infty}^{\infty} f_X(x)f_Y(z-x)dx\\
+		\end{aligned}
+	\end{equation}
+    Since $f_X$ and $f_Y$ have nonzero values only in $(0, 1)$,
+    \begin{equation}
+        0 < x < 1, \ and \ 0 < z - x < 1 \ or \ z - 1 < x < z
+    \end{equation}
+    To combine these 2 conditions to find common ranges for x with nonzero $f_X$ and $f_Y$, there
+    are 2 cases:
+    \begin{enumerate}
+        \item When $0 < z < 1$, we need to choose 0 over $z-1$ on the left side and $z$ over 1 on the
+              right side. So
+              \begin{equation}
+                  f_Z(z) = \int_{0}^{z} f_X(x)f_Y(z-x)dx\\
+                         = \int_{0}^{z} 1 dx = z
+              \end{equation}
+        \item When $1 < z < 2$, we need to choose $z-1$ over 0 on the left side and 1 over $z$ on the
+              right side. So
+              \begin{equation}
+                  f_Z(z) = \int_{z-1}^{1} f_X(x)f_Y(z-x)dx\\
+                         = \int_{z-1}^{1} 1 dx = 2 - z
+              \end{equation}
+    \end{enumerate}
+
+    Therefore,
+    \begin{equation}
+        f_Z(z) =
+            \begin{cases}
+              z, & \text{if}\ 0 < z \leqslant 1\\
+              2 - z, & \text{if}\ 1 < z < 2\\
+              0, & \text{otherwise}
+            \end{cases}
+    \end{equation}
+
+    The graph is 2 line segments
+
+    \begin{center}
+    \begin{tikzpicture}[x=3cm,y=3cm,scale=1]
+       \tkzInit[xmax=2.1,ymax=1.1,xmin=0,ymin=0]
+       \tkzAxeXY
+       \draw[thick] (0, 0) -- (1, 1);
+       \draw[thick] (1, 1) -- (2, 0);
+    \end{tikzpicture}
+    \end{center}
+
+
+    This \href{http://www.statisticalengineering.com/sums_of_random_variables.htm}{statisticalengineering.com post}
+    and \href{https://math.stackexchange.com/questions/357672/density-of-sum-of-two-independent-uniform-random-variables-on-0-1}{stackoverflow discussion}
+    discusses the same problem. For sum of $n$ variables, see
+    \href{https://en.wikipedia.org/wiki/Irwin%E2%80%93Hall_distribution}{ Irwin-Hall Distribution}.
+
+    This \href{https://towardsdatascience.com/sum-of-exponential-random-variables-b023b61f0c0f}{post}
+    discusses the exponential distribution case. If $X, Y \sim Exp(\lambda)$, the Equation (\ref{eq:1})
+    becomes
+
+    \begin{equation} \label{eq:2}
+		\begin{aligned}
+		f_Z(z) &= \int_{-\infty}^{\infty} f_X(x)f_Y(z-x)dx\\
+               &= \int_{0}^{z} \lambda e^{-\lambda x} \lambda e^{-\lambda (z - x)} dx\\
+               &= \lambda^2 \int_{0}^{z} e^{-\lambda z} dx\\
+               &= \lambda^2 z e^{-\lambda z}
+		\end{aligned}
+	\end{equation}
+
+    where $x$ and $z-x$ have to be positive, which means $0 < x < z$.
+
+    More sum over other distributions are discussed
+    \href{http://www.dim.uchile.cl/~mkiwi/ma34a/libro/ch7.pdf}{here}.
+
+\end{document}
