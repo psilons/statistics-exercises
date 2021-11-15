@@ -7,6 +7,7 @@
 \usepackage{simple_note}
 \usepackage{enumitem}
 \usepackage{tkz-euclide}
+\usepackage{bm} % bold math symbols
 
 % Document
 \begin{document}
@@ -62,17 +63,17 @@
         \end{aligned}
     \end{equation*}
 
-    When $0 \leqslant x \leqslant c$, the above integral becomes
+    \textbf{When} $\bm{0 \leqslant x \leqslant c}$, the above integral becomes
     \begin{equation*}
         \int_0^x (1 - (x-b)) db + \int_x^1 db = 1 - \frac{x^2}{2}
     \end{equation*}
 
-    When $c \leqslant x \leqslant 1$, the above integral becomes
+    \textbf{When} $\bm{c \leqslant x \leqslant 1}$, the above integral becomes
     \begin{equation*}
         \int_{x-c}^x (1 - (x-b)) db + \int_x^1 db = 1 - x + c - \frac{c^2}{2}
     \end{equation*}
 
-    When $1 \leqslant x \leqslant 1 + c$, the above integral becomes
+    \textbf{When} $\bm{1 \leqslant x \leqslant 1 + c}$, the above integral becomes
     \begin{equation*}
         \int_{x-c}^1 (1 - (x-b)) db = \frac{3}{2} - 2x + \frac{x^2}{2} + c - \frac{c^2}{2}
     \end{equation*}
@@ -105,7 +106,7 @@
                  &= \int_0^{1 + c} -2xS(x,c)S_x^{'}(x,c) dx
         \end{aligned}
     \end{equation*}
-    To derive the integrand, from Equation (10)
+    To derive the integrand,
     \begin{equation*}
         S_x^{'}(x, c) =
             \begin{cases}
@@ -126,7 +127,7 @@
 
     Now we compute each case.
 
-    When $0 \leqslant x \leqslant c$,
+    \textcolor{red}{When} $\color{red} 0 \leqslant x \leqslant c$,
     \begin{equation*}
         T_1(x, c) = 2x^2 - x^4
     \end{equation*}
@@ -143,7 +144,7 @@
         E_1 = \int_0^1 G_1(c)dc = \frac{2}{12} - \frac{1}{30} = \frac{2}{15}
     \end{equation*}
 
-    Similarly, when $c \leqslant x \leqslant 1$,
+    Similarly, \textcolor{red}{when} $\color{red} c \leqslant x \leqslant 1$,
     \begin{equation*}
         T_2(x, c) = 2x - 2x^2 + x(2c - c^2)
     \end{equation*}
@@ -162,7 +163,7 @@
             - \frac{1}{12} + \frac{1}{10} = \frac{7}{20}
     \end{equation*}
 
-    When $1 \leqslant x \leqslant 1 + c$,
+    \textcolor{red}{When} $\color{red} 1 \leqslant x \leqslant 1 + c$,
     \begin{equation*}
         T_3(x, c) = -x^4 +6x^3 -8x^2 + (2x - x^2)(3 + 2c - c^2)
     \end{equation*}
@@ -199,7 +200,7 @@
 
     \medskip
     \textbf{Solution 2: Without integration by parts}\\
-    When $0 \leqslant x \leqslant c$,
+    \textcolor{red}{When} $\color{red} 0 \leqslant x \leqslant c$,
     \begin{equation*}
         S_1(x, c) = 1 - \frac{x^2}{2}
     \end{equation*}
@@ -221,7 +222,7 @@
 		\end{aligned}
 	\end{equation*}
 
-    When $c \leqslant x \leqslant 1$,
+    \textcolor{red}{When} $\color{red} c \leqslant x \leqslant 1$,
     \begin{equation*}
         S_2(x, c) = 1 + c - \frac{c^2}{2} - x
     \end{equation*}
@@ -244,7 +245,7 @@
 		\end{aligned}
 	\end{equation*}
 
-    When $1 \leqslant x \leqslant 1 + c$,
+    \textcolor{red}{When} $\color{red} 1 \leqslant x \leqslant 1 + c$,
     \begin{equation*}
         S_3(x, c) = \frac{x^2}{2} - 2x + \frac{3}{2} + c - \frac{c^2}{2}
     \end{equation*}
