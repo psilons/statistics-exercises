@@ -59,23 +59,23 @@
         \begin{aligned}
         P(X \geqslant x | c) &= P((a + b \geqslant x, b + c \geqslant x)|c)\\
             &= \int_{(x-c)^+}^1 \int_{(x-b)^+}^1 da db\\
-            &= \int_{(x-c)^+}^1 (1 - (x-b)^+) db
+            &= \int_{(x-c)^+}^1 \big(1 - (x-b)^+\big) db
         \end{aligned}
     \end{equation*}
 
     \textbf{When} $\bm{0 \leqslant x \leqslant c}$, the above integral becomes
     \begin{equation*}
-        \int_0^x (1 - (x-b)) db + \int_x^1 db = 1 - \frac{x^2}{2}
+        \int_0^x \big(1 - (x-b)\big) db + \int_x^1 db = 1 - \frac{x^2}{2}
     \end{equation*}
 
     \textbf{When} $\bm{c \leqslant x \leqslant 1}$, the above integral becomes
     \begin{equation*}
-        \int_{x-c}^x (1 - (x-b)) db + \int_x^1 db = 1 - x + c - \frac{c^2}{2}
+        \int_{x-c}^x \big(1 - (x-b)\big) db + \int_x^1 db = 1 - x + c - \frac{c^2}{2}
     \end{equation*}
 
     \textbf{When} $\bm{1 \leqslant x \leqslant 1 + c}$, the above integral becomes
     \begin{equation*}
-        \int_{x-c}^1 (1 - (x-b)) db = \frac{3}{2} - 2x + \frac{x^2}{2} + c - \frac{c^2}{2}
+        \int_{x-c}^1 \big(1 - (x-b)\big) db = \frac{3}{2} - 2x + \frac{x^2}{2} + c - \frac{c^2}{2}
     \end{equation*}
 
     Now the expectation can be rewritten as
@@ -106,7 +106,7 @@
                  &= \int_0^{1 + c} -2xS(x,c)S_x^{'}(x,c) dx
         \end{aligned}
     \end{equation*}
-    To derive the integrand,
+    because $S$ is the survival function and is $0$ on the right boundary $1+c$. To derive the integrand,
     \begin{equation*}
         S_x^{'}(x, c) =
             \begin{cases}
@@ -152,7 +152,7 @@
     \begin{equation*}
 		\begin{aligned}
 		G_2(c) &= \int_c^1 T_2(x, c) dx \\
-		   &= \int_c^1 [- 2x^2 + x(2 + 2c - c^2)] dx\\
+		   &= \int_c^1 \big[- 2x^2 + x(2 + 2c - c^2)\big] dx\\
            &= -\frac{2}{3} + \frac{2c^3}{3} + 2 + 2c -c^2 -c^2(2 + 2c - c^2)
            &= \frac{1}{3} + c - \frac{3c^2}{2} - \frac{c^3}{3} + \frac{c^4}{2}
 		\end{aligned}
@@ -171,9 +171,9 @@
     \begin{equation*}
 		\begin{aligned}
 		G_3(c) &= \int_1^{1+c} T_3(x, c) dx \\
-		   &= \int_1^{1+c} [-x^4 +6x^3 -8x^2 + (2x - x^2)(3 + 2c - c^2)] dx\\
-           &= -\frac{1}{5}[(1+c)^5 - 1] + \frac{3}{2}[(1+c)^4 - 1] - \frac{8}{3}[(1+c)^3 - 1]\\
-           &\ \ \ + \{[(1+c)^2 - 1] - \frac{1}{3}[(1+c)^3 - 1]\}(3 + 2c - c62)\\
+		   &= \int_1^{1+c} \big[-x^4 +6x^3 -8x^2 + (2x - x^2)(3 + 2c - c^2)\big] dx\\
+           &= -\frac{1}{5}\big[(1+c)^5 - 1\big] + \frac{3}{2}\big[(1+c)^4 - 1\big] - \frac{8}{3}\big[(1+c)^3 - 1\big]\\
+           &\ \ \ + \Big\{\big[(1+c)^2 - 1\big] - \frac{1}{3}\big[(1+c)^3 - 1\big]\Big\}(3 + 2c - c62)\\
            &= \frac{41}{30} - \frac{1}{5}(1+c)^5 + \frac{3}{2}(1+c)^4 - \frac{8}{3}(1+c)^3\\
            &\ \ \ + (-\frac{c^3}{3} + c)(3 + 2c - c^2)\\
            &= \frac{41}{30} - \frac{1}{5}(1+c)^5 + \frac{3}{2}(1+c)^4 - \frac{8}{3}(1+c)^3\\
@@ -187,7 +187,7 @@
                 - \frac{2}{3}[2^4 - 1] + \frac{1}{18} - \frac{2}{15} - \frac{1}{2}
                 + \frac{2}{3} + \frac{3}{2}\\
             &= \frac{1}{10} + \frac{1}{18}\\
-            &= \frac{14}{90}
+            &= \frac{7}{45}
         \end{aligned}
     \end{equation*}
 
@@ -196,7 +196,7 @@
         \mathbb{E}[Z] = E_1 + E_2 + E_3 = \frac{2}{15} + \frac{7}{20} + \frac{14}{90}
                       = \frac{23}{36} = 0.63\overline{8}
     \end{equation*}
-
+    The numbers are verified in sympy, see src/intro/problem1-1.py.
 
     \medskip
     \textbf{Solution 2: Without integration by parts}\\
@@ -253,11 +253,11 @@
     \begin{equation*}
 		\begin{aligned}
 		G_3(c) &= \int_1^{1+c} S_3^2(x, c) dx \\
-		   &= \int_1^{1+c} [\frac{x^4}{4} - 2x^3 + 4x^2 + x^2(\frac{3}{2} + c - \frac{c^2}{2})
-              -4x(\frac{3}{2} + c - \frac{c^2}{2}) + (\frac{3}{2} + c - \frac{c^2}{2})^2] dx\\
-           &= \frac{1}{20}[(1+c)^5 - 1] - \frac{1}{2}[(1+c)^4 - 1] + \frac{4}{3}[(1+c)^3 - 1]\\
-           &\ \ \ + \frac{1}{3}[(1+c)^3 - 1](\frac{3}{2} + c - \frac{c^2}{2})
-              - 2[(1+c)^2 - 1](\frac{3}{2} + c - \frac{c^2}{2})\\
+		   &= \int_1^{1+c} \Big[\frac{x^4}{4} - 2x^3 + 4x^2 + x^2(\frac{3}{2} + c - \frac{c^2}{2})
+              -4x(\frac{3}{2} + c - \frac{c^2}{2}) + (\frac{3}{2} + c - \frac{c^2}{2})^2\Big] dx\\
+           &= \frac{1}{20}\big[(1+c)^5 - 1\big] - \frac{1}{2}\big[(1+c)^4 - 1\big] + \frac{4}{3}\big[(1+c)^3 - 1\big]\\
+           &\ \ \ + \frac{1}{3}\big[(1+c)^3 - 1\big](\frac{3}{2} + c - \frac{c^2}{2})
+              - 2\big[(1+c)^2 - 1\big](\frac{3}{2} + c - \frac{c^2}{2})\\
            &\ \ \ + c(\frac{3}{2} + c - \frac{c^2}{2})^2\\
            &= -\frac{53}{60} + \frac{(1+c)^5}{20} - \frac{(1+c)^4}{2} + \frac{4(1+c)^3}{3}
               + (\frac{c^3}{3} - c^2 -3c)(\frac{3}{2} + c - \frac{c^2}{2})\\
@@ -283,4 +283,5 @@
         \mathbb{E}[Z] = E_1 + E_2 + E_3 = \frac{17}{40} + \frac{23}{120} + \frac{1}{45}
                       = \frac{23}{36} = 0.63\overline{8}
     \end{equation*}
+    The numbers are verified in sympy, see src/intro/problem1-2.py.
 \end{document}
