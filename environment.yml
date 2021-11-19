@@ -9,6 +9,7 @@ dependencies:
     - pillow
     - jupyter
     - sympy
+    - matplotlib
     - pip: # only by pip
           - pipdeptree # or conda install -c conda-forge pipdeptree
 		  - symbulate
