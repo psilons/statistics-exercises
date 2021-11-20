@@ -21,3 +21,4 @@ Sums of Random Variables
 - https://arxiv.org/pdf/1811.11981.pdf
 - http://www.milefoot.com/math/stat/rv-sums.htm
 
+Files in the docs folder are from the internet, I am not the author. Google filename + title.
