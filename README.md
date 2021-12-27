@@ -22,3 +22,5 @@ Sums of Random Variables
 - http://www.milefoot.com/math/stat/rv-sums.htm
 
 Files in the docs folder are from the internet, I am not the author. Google filename + title.
+
+To convert jupyter notebook to html or pdf, go to File | Download as.
