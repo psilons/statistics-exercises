@@ -27,6 +27,8 @@ To convert jupyter notebook to html or pdf, go to File | Download as.
 
 <span style="color:blue">test *text colors* not working in github, but works in IntelliJ</span>.
 
+https://stackoverflow.com/questions/11509830/how-to-add-color-to-githubs-readme-md-file
+
 ```diff
 - text in red
 + text in green
@@ -53,3 +55,6 @@ https://docs.github.com/en/get-started/writing-on-github/working-with-advanced-f
 When $\color{red}{We \space need} \space colors$, we do get $\color{red}colors$.
 
 But single $ does not render in IntelliJ.
+
+More
+- https://github.com/github/markup/issues/1440
