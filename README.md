@@ -50,4 +50,4 @@ https://docs.github.com/en/get-started/writing-on-github/working-with-advanced-f
 \color{red}Welcome \space \color{lightblue}To \space \color{orange}Stackoverflow
 ```
 
-When $\color{red}{We need} colors$, we do get $\color{red}colors$.
+When $\color{red}{We \space need} colors$, we do get $\color{red}colors$.
