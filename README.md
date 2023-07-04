@@ -59,3 +59,5 @@ But single $ does not render in IntelliJ.
 
 More
 - https://github.com/github/markup/issues/1440
+- https://stackoverflow.com/questions/11256433/how-to-show-math-equations-in-general-githubs-markdownnot-githubs-blog/11256862#11256862
+- https://stackoverflow.com/questions/35498525/latex-rendering-in-readme-md-on-github
