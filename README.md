@@ -25,4 +25,4 @@ Files in the docs folder are from the internet, I am not the author. Google file
 
 To convert jupyter notebook to html or pdf, go to File | Download as.
 
-<span style="color:blue">test text colors</span>.
+<span style="color:blue">test *text colors*</span>.
