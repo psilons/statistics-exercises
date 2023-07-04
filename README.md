@@ -51,3 +51,5 @@ https://docs.github.com/en/get-started/writing-on-github/working-with-advanced-f
 ```
 
 When $\color{red}{We \space need} \space colors$, we do get $\color{red}colors$.
+
+But single $ does not render in IntelliJ.
