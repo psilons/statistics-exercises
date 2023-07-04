@@ -49,3 +49,5 @@ https://docs.github.com/en/get-started/writing-on-github/working-with-advanced-f
 ```math
 \color{red}Welcome \space \color{lightblue}To \space \color{orange}Stackoverflow
 ```
+
+When $\color{red}{We need} colors$, we do get $\color{red}colors$.
