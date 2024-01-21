@@ -11,5 +11,5 @@ dependencies:
     - sympy
     - matplotlib
     - pip: # only by pip
-          - pipdeptree # or conda install -c conda-forge pipdeptree
-		  - symbulate
+        - pipdeptree # or conda install -c conda-forge pipdeptree
+        - symbulate

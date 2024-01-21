@@ -25,39 +25,4 @@ Files in the docs folder are from the internet, I am not the author. Google file
 
 To convert jupyter notebook to html or pdf, go to File | Download as.
 
-<span style="color:blue">test *text colors* not working in github, but works in IntelliJ</span>.
 
-https://stackoverflow.com/questions/11509830/how-to-add-color-to-githubs-readme-md-file
-
-```diff
-- text in red
-+ text in green
-! text in orange
-# text in gray
-@@ text in purple (and bold)@@
-```
-
-https://github.blog/2022-05-19-math-support-in-markdown/
-
-When $a \ne 0$, there are two solutions to $(ax^2 + bx + c = 0)$ and they are 
-
-$$ x = {-b \pm \sqrt{b^2-4ac} \over 2a} $$
-
-https://docs.github.com/en/get-started/writing-on-github/working-with-advanced-formatting/writing-mathematical-expressions
-
-```math
-\left( \sum_{k=1}^n a_k b_k \right)^2 \leq \left( \sum_{k=1}^n a_k^2 \right) \left( \sum_{k=1}^n b_k^2 \right)
-```
-
-```math
-\color{red}Welcome \space \color{lightblue}To \space \color{orange}Stackoverflow
-```
-
-When $\color{red}{We \space need} \space colors$, we do get $\color{red}colors$.
-
-But single $ does not render in IntelliJ.
-
-More
-- https://github.com/github/markup/issues/1440
-- https://stackoverflow.com/questions/11256433/how-to-show-math-equations-in-general-githubs-markdownnot-githubs-blog/11256862#11256862
-- https://stackoverflow.com/questions/35498525/latex-rendering-in-readme-md-on-github
